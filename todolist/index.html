@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TodoList - Aprendiendo VueJs</title>
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+    <body>
+        <div class="box" id="app">
+            <h1 class="text-center">TodoList</h1>
+            <form action="#" method="post" class="mt-5 form">
+                <input
+                    type="text"
+                    name="tarea"
+                    class="form--control"
+                    v-model="tarea"
+                />
+                <input
+                    type="button"
+                    value="Añadir Tarea"
+                    class="btn btn--send"
+                    @click="insertarTarea()"
+                />
+            </form>
+            <ul class="tareas">
+                <li v-for="(todo, key) in todolist" :key="todo.id">
+                    <span
+                        :contenteditable="editing === key"
+                        :ref="`span-${key}`"
+                        @blur="terminarEdicion(key)"
+                        >{{ todo.title }}</span
+                    >
+                    <div class="crudactions">
+                        <a
+                            href="#"
+                            class="btn btn--primary mr-3"
+                            @click="editing === key ? terminarEdicion(key) : editarTarea(key)"
+                            >{{ editing === key ? 'finalizar' : 'editar' }}</a
+                        >
+                        <a
+                            href="#"
+                            class="btn btn--danger"
+                            @click="eliminarTarea(key)"
+                            >Eliminar</a
+                        >
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f6ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+a {
+    color: #f4f6ff;
+    text-decoration: none;
+}
+
+.box {
+    width: 768px;
+    border-radius: 8px;
+    background-color: #10375c;
+    padding: 30px;
+    color: #f4f6ff;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn--primary {
+    background-color: #f3c623;
+    color: #10375c;
+}
+
+.btn--send {
+    background-color: #f3c623;
+}
+
+.btn--danger {
+    background-color: #127681;
+}
+
+.form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form--control {
+    padding: 10px;
+}
+
+.mt-5 {
+    margin-top: 30px;
+}
+.mr-3 {
+    margin-right: 10px;
+}
+
+.tareas {
+    margin-top: 40px;
+}
+
+.tareas li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #127681;
+    padding-bottom: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
