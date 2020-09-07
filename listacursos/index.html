@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cursos Platzi</title>
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+    <body class="body">
+        <div id="app" class="box">
+            <h1 class="title--main">Lista de cursos tomados</h1>
+            <p>
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Titulo del curso"
+                    v-model="title"
+                />
+            </p>
+            <p>
+                <input type="number" placeholder="Horas" v-model="time" />
+                <span class="error" v-if="showError === true"
+                    >Meter un numero mayor a 0</span
+                >
+            </p>
+            <p>
+                <button v-on:click="addCourse" class="btn">
+                    Guardar Curso
+                </button>
+            </p>
+
+            <div>
+                <h3 class="title--secondary">Lista de Cursos</h3>
+                <p class="error" v-if="courses.length === 0">
+                    Aun no has realizado cursos
+                </p>
+                <div class="listResults">
+                    <ol>
+                        <!-- Lista de cursos -->
+                        <li v-for="(course, i) in courses">
+                            {{course.title}} - {{course.time}}
+                        </li>
+                    </ol>
+                    <hr />
+                </div>
+                <div class="totalTime">
+                    <p>
+                        Llevo <strong>{{ totalTime }}</strong> horas aprendiendo
+                        en Platzi.
+                    </p>
+                </div>
+            </div>
+            <footer class="footer">
+                <b>#NuncaParesDeAprender 💚</b>
+            </footer>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
